@@ -1,0 +1,29 @@
+{
+  "name": "comments-with-react",
+  "version": "1.0.0",
+  "main": "components.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaylURRE/comments-with-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaylURRE/comments-with-react/issues"
+  },
+  "homepage": "https://github.com/TaylURRE/comments-with-react#readme",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.1.8"
+  },
+  "description": ""
+}
