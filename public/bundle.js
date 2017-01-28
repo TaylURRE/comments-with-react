@@ -47,19 +47,71 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
 
-	var Main = React.createClass({
-	  displayName: 'Main',
+	class CommentBox extends React.Component {
 
-	  render: function () {
+	  render() {
+	    const comments = this._getComments() || [];
 	    return React.createElement(
-	      'h2',
-	      null,
-	      'Hello World'
+	      'div',
+	      { className: 'comment-box' },
+	      React.createElement(
+	        'h3',
+	        null,
+	        'Comments'
+	      ),
+	      React.createElement('h4', { className: 'comment-count' }),
+	      React.createElement(
+	        'div',
+	        { className: 'comment-list' },
+	        comments
+	      )
 	    );
 	  }
-	});
 
-	ReactDOM.render(React.createElement(Main, null), document.getElementById('app'));
+	  _getComments() {
+
+	    const commentList = [{ id: 1, author: 'Clu', body: 'Just say no to love!', avatarUrl: 'http://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png' }, { id: 2, author: 'Anne Droid', body: 'I wanna know what love is...', avatarUrl: 'http://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png' }];
+
+	    return commentList.map(comment => {
+	      return React.createElement(Comment, {
+	        author: comment.author,
+	        body: comment.body,
+	        avatarUrl: comment.avatarUrl,
+	        key: comment.id });
+	    });
+	  }
+	}
+
+	class Comment extends React.Component {
+	  render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'comment' },
+	      React.createElement('img', { src: this.props.avatarUrl, alt: `${this.props.author}'s picture` }),
+	      React.createElement(
+	        'p',
+	        { className: 'comment-header' },
+	        this.props.author
+	      ),
+	      React.createElement(
+	        'p',
+	        { className: 'comment-body' },
+	        this.props.body
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'comment-actions' },
+	        React.createElement(
+	          'a',
+	          { href: '#' },
+	          'Delete comment'
+	        )
+	      )
+	    );
+	  }
+	}
+
+	ReactDOM.render(React.createElement(CommentBox, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
