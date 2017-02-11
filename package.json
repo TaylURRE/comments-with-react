@@ -23,7 +23,11 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.1.8"
+    "babel-preset-env": "^1.1.8",
+    "css-loader": "^0.26.1",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.13.1"
   },
   "description": ""
 }
